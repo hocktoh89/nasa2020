@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -10,8 +10,15 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import {projectList} from './data/kidProjects';
-import robot from './images/robot.png';
+import { projectList } from "./data/kidProjects";
+import robot from "./images/robot.png";
+
+import BottomNavigation from "@material-ui/core/BottomNavigation";
+import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
+import HomeIcon from "@material-ui/icons/Home";
+import SearchIcon from "@material-ui/icons/Search";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,45 +28,78 @@ const useStyles = makeStyles((theme) => ({
   },
   media: {
     minHeight: 140,
-    height: "auto"
+    height: "auto",
   },
 }));
 
 function Kid() {
   const classes = useStyles();
 
-  
-   return (
+  const [navBarValue, setNavBarValue] = useState("recents");
+
+  const handleNavBarChange = (event, newValue) => {
+    setNavBarValue(newValue);
+  };
+
+  return (
     <div className={classes.root}>
       <List component="nav" aria-label="main mailbox folders">
-      {projectList && projectList.map
-      ( project => 
-        <ListItem>
-          <Card>
-            <CardActionArea>
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                {project.title}
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                {project.descriptions}
-                </Typography>
-              </CardContent>
-              <CardMedia
-                className={classes.media}
-                image={robot}
-                title="Contemplative Reptile"
-              />
-            </CardActionArea>
-            <CardActions>
-              <Button size="small" color="primary">
-                Try it now
-              </Button>
-            </CardActions>
-          </Card>
-        </ListItem>)
-        }
+        {projectList &&
+          projectList.map((project) => (
+            <ListItem>
+              <Card>
+                <CardActionArea>
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      {project.title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                    >
+                      {project.descriptions}
+                    </Typography>
+                  </CardContent>
+                  <CardMedia
+                    className={classes.media}
+                    image={robot}
+                    title="Contemplative Reptile"
+                  />
+                </CardActionArea>
+                <CardActions>
+                  <Button size="small" color="primary">
+                    Try it now
+                  </Button>
+                </CardActions>
+              </Card>
+            </ListItem>
+          ))}
       </List>
+
+      <BottomNavigation
+        value={navBarValue}
+        onChange={handleNavBarChange}
+        className={classes.root}
+      >
+        <BottomNavigationAction
+          label="Home"
+          value="recents"
+          icon={<HomeIcon />}
+        />
+        <BottomNavigationAction
+          label="Search"
+          icon={<SearchIcon />}
+        />
+        <BottomNavigationAction
+          label="Favourite"
+          icon={<FavoriteIcon />}
+        />
+        <BottomNavigationAction
+          label="User"
+          icon={<PermIdentityIcon />}
+        />
+      </BottomNavigation>
     </div>
   );
 }
