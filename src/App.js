@@ -9,6 +9,7 @@ import { Button } from '@material-ui/core';
 import Home from './Home';
 import NasaEngineer from './NasaEngineer';
 import Kid from './Kid';
+import ProjectDetails from './ProjectDetails';
 import './App.css';
 
 function App() {
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route path="/kid">
             <Kid />
+          </Route>
+          <Route path="/project-details">
+            <ProjectDetails />
           </Route>
         </Switch>
     </div>
