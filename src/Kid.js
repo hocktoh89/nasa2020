@@ -11,6 +11,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import {projectList} from './data/kidProjects';
+import robot from './images/robot.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,7 +20,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
   },
   media: {
-    height: 140,
+    minHeight: 140,
+    height: "auto"
   },
 }));
 
@@ -45,7 +47,7 @@ function Kid() {
               </CardContent>
               <CardMedia
                 className={classes.media}
-                src="./images/robot.png"
+                image={robot}
                 title="Contemplative Reptile"
               />
             </CardActionArea>
