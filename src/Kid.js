@@ -10,6 +10,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import {projectList} from './data/kidProjects';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,41 +18,45 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
   },
+  media: {
+    height: 140,
+  },
 }));
 
 function Kid() {
   const classes = useStyles();
 
-  return (
+  
+   return (
     <div className={classes.root}>
       <List component="nav" aria-label="main mailbox folders">
+      {projectList && projectList.map
+      ( project => 
         <ListItem>
           <Card>
             <CardActionArea>
-              <CardMedia
-                image="/static/images/cards/contemplative-reptile.jpg"
-                title="Contemplative Reptile"
-              />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
-                  Lizard
+                {project.title}
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Lizards are a widespread group of squamate reptiles, with over
-                  6,000 species, ranging across all continents except Antarctica
+                {project.descriptions}
                 </Typography>
               </CardContent>
+              <CardMedia
+                className={classes.media}
+                src="./images/robot.png"
+                title="Contemplative Reptile"
+              />
             </CardActionArea>
             <CardActions>
               <Button size="small" color="primary">
-                Share
-              </Button>
-              <Button size="small" color="primary">
-                Learn More
+                Try it now
               </Button>
             </CardActions>
           </Card>
-        </ListItem>
+        </ListItem>)
+        }
       </List>
     </div>
   );
