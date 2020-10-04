@@ -20,6 +20,13 @@ import SearchIcon from "@material-ui/icons/Search";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import Avatar from "@material-ui/core/Avatar";
+import avatar from "./images/kidAvatar.jpg";
+
 import Paper from "@material-ui/core/Paper";
 import {
   withRouter
@@ -39,6 +46,13 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     maxWidth: 500,
   },
+  avatar: {
+    position: "absolute",
+    zIndex: 1,
+    left: 0,
+    right: 0,
+    margin: "0 auto",
+  },
 }));
 
 function Kid(props) {
@@ -53,6 +67,19 @@ function Kid(props) {
   return (
     <div className={classes.root}>
             <Paper className={classes.paper}>
+            <AppBar position="static" className={classes.appBar}>
+          <Toolbar variant="dense">
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              onClick={() => props.history.goBack()}
+            >
+              <ArrowBackIcon />
+            </IconButton>
+            <Avatar alt="Remy Sharp" src={avatar} className={classes.avatar} />
+          </Toolbar>
+        </AppBar>
       <List component="nav" aria-label="main mailbox folders">
         {projectList &&
           projectList.map((project) => (
