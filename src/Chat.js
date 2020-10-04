@@ -10,7 +10,6 @@ import Avatar from "@material-ui/core/Avatar";
 import Container from "@material-ui/core/Container";
 import avatar from "./images/avatar.jpg";
 
-import { Button } from "@material-ui/core";
 import { withRouter } from "react-router-dom";
 import ChatBubble from "react-chat-bubble";
 
@@ -78,7 +77,7 @@ function Chat(props) {
               edge="start"
               className={classes.menuButton}
               color="inherit"
-              
+              onClick={() => props.history.goBack()}
             >
               <ArrowBackIcon />
             </IconButton>

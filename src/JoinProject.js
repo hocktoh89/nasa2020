@@ -97,7 +97,7 @@ function JoinProject(props) {
         <Button
           variant="contained"
           color="primary"
-          onClick={() => props.history.push("/")}
+          onClick={() => props.history.push("/chat")}
         >
           Send a message
         </Button>
