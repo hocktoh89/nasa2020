@@ -11,6 +11,7 @@ import NasaEngineer from './NasaEngineer';
 import Kid from './Kid';
 import ProjectDetails from './ProjectDetails';
 import JoinProject from './JoinProject';
+import Chat from './Chat';
 import './App.css';
 
 function App() {
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path="/join-project">
             <JoinProject />
+          </Route>
+          <Route path="/chat">
+            <Chat />
           </Route>
         </Switch>
     </div>
