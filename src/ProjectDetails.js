@@ -28,6 +28,9 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 
 import { Button } from '@material-ui/core';
+import {
+  withRouter
+} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -153,8 +156,7 @@ function ProjectDetails(props) {
 
 
         <Button 
-             shape="round"
-            variant="contained" color="primary"
+        variant="contained" color="primary"
          onClick={() => props.history.push('/kid') }>
           Join
         </Button>
@@ -167,6 +169,7 @@ function ProjectDetails(props) {
         <BottomNavigationAction
           label="Home"
           value="recents"
+          onClick={() => props.history.push('/kid') }
           icon={<HomeIcon />}
         />
         <BottomNavigationAction
@@ -187,4 +190,4 @@ function ProjectDetails(props) {
   );
 }
 
-export default ProjectDetails;
+export default withRouter(ProjectDetails);

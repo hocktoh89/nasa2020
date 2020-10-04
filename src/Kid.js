@@ -20,19 +20,28 @@ import SearchIcon from "@material-ui/icons/Search";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 
+import Paper from "@material-ui/core/Paper";
+import {
+  withRouter
+} from "react-router-dom";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
   },
   media: {
-    minHeight: 140,
+    minHeight: 300,
     height: "auto",
+  },
+  paper: {
+    padding: theme.spacing(2),
+    margin: "auto",
+    maxWidth: 500,
   },
 }));
 
-function Kid() {
+function Kid(props) {
   const classes = useStyles();
 
   const [navBarValue, setNavBarValue] = useState("recents");
@@ -43,6 +52,7 @@ function Kid() {
 
   return (
     <div className={classes.root}>
+            <Paper className={classes.paper}>
       <List component="nav" aria-label="main mailbox folders">
         {projectList &&
           projectList.map((project) => (
@@ -68,7 +78,9 @@ function Kid() {
                   />
                 </CardActionArea>
                 <CardActions>
-                  <Button size="small" color="primary">
+                  <Button size="small" color="primary"
+                    onClick={() => props.history.push('/project-details') }
+                  >
                     Try it now
                   </Button>
                 </CardActions>
@@ -85,6 +97,7 @@ function Kid() {
         <BottomNavigationAction
           label="Home"
           value="recents"
+          onClick={() => props.history.push('/') }
           icon={<HomeIcon />}
         />
         <BottomNavigationAction
@@ -100,8 +113,9 @@ function Kid() {
           icon={<PermIdentityIcon />}
         />
       </BottomNavigation>
+      </Paper>
     </div>
   );
 }
 
-export default Kid;
+export default withRouter(Kid);
