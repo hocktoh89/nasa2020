@@ -73,7 +73,7 @@ function Kid(props) {
                   </CardContent>
                   <CardMedia
                     className={classes.media}
-                    image={robot}
+                    image={project.image}
                     title="Contemplative Reptile"
                   />
                 </CardActionArea>
