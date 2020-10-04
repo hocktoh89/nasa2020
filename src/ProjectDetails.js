@@ -7,6 +7,7 @@ import Divider from "@material-ui/core/Divider";
 import robot from "./images/robot.png";
 import labFlasks from "./images/labFlasks.png";
 import brain from "./images/brain.png";
+import inspire from "./images/inspire.png";
 
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -77,7 +78,7 @@ function ProjectDetails(props) {
         <List>
           <ListItem>
             <ListItemIcon>
-              <img src={labFlasks} width="80" height="80" />
+              <img src={inspire} width="80" height="80" />
             </ListItemIcon>
             <ListItemText
               primary="Key Concept"
