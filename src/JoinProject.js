@@ -124,7 +124,10 @@ function JoinProject(props) {
           />
           <BottomNavigationAction label="Search" icon={<SearchIcon />} />
           <BottomNavigationAction label="Favourite" icon={<FavoriteIcon />} />
-          <BottomNavigationAction label="User" icon={<PermIdentityIcon />} />
+          <BottomNavigationAction label="User" 
+            icon={<PermIdentityIcon />} 
+            onClick={() => props.history.push("/achievement")}
+          />
         </BottomNavigation>
       </Paper>
     </div>

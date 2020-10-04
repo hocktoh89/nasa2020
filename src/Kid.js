@@ -110,7 +110,9 @@ function Kid(props) {
         />
         <BottomNavigationAction
           label="User"
-          icon={<PermIdentityIcon />}
+          icon={<PermIdentityIcon 
+          onClick={() => props.history.push("/achievement")}
+          />}
         />
       </BottomNavigation>
       </Paper>

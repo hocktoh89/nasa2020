@@ -13,6 +13,7 @@ import ProjectDetails from './ProjectDetails';
 import JoinProject from './JoinProject';
 import Chat from './Chat';
 import './App.css';
+import Achievement from './Achievement';
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route path="/chat">
             <Chat />
+          </Route>
+          <Route path="/achievement">
+            <Achievement />
           </Route>
         </Switch>
     </div>
