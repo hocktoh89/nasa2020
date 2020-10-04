@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
-import robot from "./images/robot.png";
+import elephantToothpaste from "./images/elephantToothpaste.png";
 import labFlasks from "./images/labFlasks.png";
 import brain from "./images/brain.png";
 import inspire from "./images/inspire.png";
@@ -61,7 +61,7 @@ function ProjectDetails(props) {
       <Paper className={classes.paper}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm container>
-            <img className={classes.img} alt="complex" src={robot} />
+            <img className={classes.img} alt="complex" src={elephantToothpaste} />
             <Typography gutterBottom variant="h5" component="h1">
               Science Experiments: Elephant's Toothpaste
             </Typography>
@@ -105,19 +105,11 @@ function ProjectDetails(props) {
               <img src={brain} width="80" height="80" />
             </ListItemIcon>
             <ListItemText
-              primary="Key Concept"
+              primary="What to do"
               secondary={
                 <>
                   <Typography variant="body2">
-                    Chemistry
-                    <br />
-                    Biology
-                    <br />
-                    Reaction
-                    <br />
-                    Catalyst
-                    <br />
-                    Surface tension
+                  Hydrogen peroxide can irritate skin and eyes, so put on those safety goggles! An adult should carefully pour the hydrogen peroxide into the bottle. Add 8 drops of your favorite food coloring into the bottle. Add about 1 tablespoon of liquid dish soap into the bottle and swish the bottle around a bit to mix it. In a separate small cup, combine the warm water and the yeast together and mix for about 30 seconds. Now the adventure starts! Pour the yeast water mixture into the bottle (a funnel helps here) and watch the foaminess begin!
                   </Typography>
                 </>
               }
@@ -129,19 +121,11 @@ function ProjectDetails(props) {
               <img src={labFlasks} width="80" height="80" />
             </ListItemIcon>
             <ListItemText
-              primary="Key Concept"
+              primary="Material"
               secondary={
                 <>
                   <Typography variant="body2">
-                    Chemistry
-                    <br />
-                    Biology
-                    <br />
-                    Reaction
-                    <br />
-                    Catalyst
-                    <br />
-                    Surface tension
+                  - A clean 16-oz plastic soda bottle - 1/2 cup 20-volume hydrogen peroxide liquid (20-volume is a 6% solution; you can get this from a beauty supply store or hair salon) - 1 Tablespoon (one packet) of dry yeast - 3 Tablespoons of warm water - Liquid dishwashing soap - Food coloring - Small cup - Safety goggles
                   </Typography>
                 </>
               }

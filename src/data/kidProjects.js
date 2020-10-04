@@ -1,5 +1,5 @@
 import robot from "../images/robot.png";
-import toothpasteExplosion from "../images/toothpasteExplosion.jpg"
+import elephantToothpaste from "../images/elephantToothpaste.png"
 
 export const projectList = [
   {
@@ -10,10 +10,10 @@ export const projectList = [
     'image': robot
   },
   {
-    'title': 'Test Toothpaste Explosion',
+    'title': `Test Elephant's Toothpaste `,
     'briefIntro': '',
     'descriptions': 'Create a giant foaming reaction, and use science to wow your friends with this classic activity. With just a few ingredients you can make something that looks like foamy toothpaste being squeezed from a tube—but so big that it looks almost fit for an elephant!',
     'projectUrl': '/toothpaste-explosions',
-    'image': toothpasteExplosion
+    'image': elephantToothpaste
   }
 ];
