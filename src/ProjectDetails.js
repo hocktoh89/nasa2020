@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-// import ButtonBase from '@material-ui/core/ButtonBase';
 import Divider from "@material-ui/core/Divider";
 import robot from "./images/robot.png";
 import labFlasks from "./images/labFlasks.png";
@@ -12,11 +11,6 @@ import brain from "./images/brain.png";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import Avatar from "@material-ui/core/Avatar";
-import ImageIcon from "@material-ui/icons/Image";
-import WorkIcon from "@material-ui/icons/Work";
-import BeachAccessIcon from "@material-ui/icons/BeachAccess";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 
 
@@ -157,7 +151,7 @@ function ProjectDetails(props) {
 
         <Button 
         variant="contained" color="primary"
-         onClick={() => props.history.push('/kid') }>
+         onClick={() => props.history.push('/join-project') }>
           Join
         </Button>
 

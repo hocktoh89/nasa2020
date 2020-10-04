@@ -10,6 +10,7 @@ import Home from './Home';
 import NasaEngineer from './NasaEngineer';
 import Kid from './Kid';
 import ProjectDetails from './ProjectDetails';
+import JoinProject from './JoinProject';
 import './App.css';
 
 function App() {
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route path="/project-details">
             <ProjectDetails />
+          </Route>
+          <Route path="/join-project">
+            <JoinProject />
           </Route>
         </Switch>
     </div>
